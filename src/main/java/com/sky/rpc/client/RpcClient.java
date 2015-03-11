@@ -48,6 +48,7 @@ public class RpcClient extends SimpleChannelInboundHandler<RpcResponse> {
         port = Integer.parseInt(array[1]);
         initialize();
         connect();
+
     }
 
     public RpcClient(ServiceDiscovery serviceDiscovery) {
