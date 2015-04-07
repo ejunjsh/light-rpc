@@ -1,1 +1,1 @@
-一个轻量级RPC，基于黄勇的这篇 http://my.oschina.net/huangyong/blog/361751 实现，并改进一些问题，和性能提升
+一个轻量级RPC，基于黄勇的这篇 http://my.oschina.net/huangyong/blog/361751 实现，并改进一些问题，和性能提升，加入更多序列化方法
