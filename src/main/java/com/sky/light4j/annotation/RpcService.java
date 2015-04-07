@@ -1,4 +1,4 @@
-package com.sky.rpc.annotation;
+package com.sky.light4j.annotation;
 
 import org.springframework.stereotype.Component;
 

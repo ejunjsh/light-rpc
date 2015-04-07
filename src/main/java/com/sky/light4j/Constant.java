@@ -1,4 +1,4 @@
-package com.sky.rpc;
+package com.sky.light4j;
 
 /**
  * Created by shaojunjie on 2015/3/2.

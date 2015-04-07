@@ -1,6 +1,6 @@
-package com.sky.rpc.server;
+package com.sky.light4j.server;
 
-import com.sky.rpc.Constant;
+import com.sky.light4j.Constant;
 import org.apache.zookeeper.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

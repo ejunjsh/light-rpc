@@ -1,14 +1,16 @@
-package com.sky.rpc.beans;
+package com.sky.light4j.beans;
+
+import java.io.Serializable;
 
 /**
  * Created by shaojunjie on 2015/3/2.
  */
-public class RpcRequest {
+public class RpcRequest implements Serializable {
 
     private String requestId;
     private String className;
     private String methodName;
-    private Class<?>[] parameterTypes;
+    private String[] parameterTypes;
     private Object[] parameters;
 
     public String getRequestId() {
@@ -35,11 +37,11 @@ public class RpcRequest {
         this.methodName = methodName;
     }
 
-    public Class<?>[] getParameterTypes() {
+    public String[] getParameterTypes() {
         return parameterTypes;
     }
 
-    public void setParameterTypes(Class<?>[] parameterTypes) {
+    public void setParameterTypes(String[] parameterTypes) {
         this.parameterTypes = parameterTypes;
     }
 

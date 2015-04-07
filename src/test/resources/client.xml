@@ -17,16 +17,22 @@
     <context:property-placeholder location="classpath:config.properties"/>
 
     <!-- 配置服务发现组件 -->
-    <bean id="serviceDiscovery" class="com.sky.rpc.client.ServiceDiscovery">
+    <bean id="serviceDiscovery" class="com.sky.light4j.client.ServiceDiscovery">
         <constructor-arg name="registryAddress" value="${registry.address}"/>
     </bean>
 
-    <bean id="rpcClient" class="com.sky.rpc.client.RpcClient">
+    <bean id="rpcClient" class="com.sky.light4j.client.RpcClient" destroy-method="destroy">
         <constructor-arg name="serviceDiscovery" ref="serviceDiscovery"/>
+        <constructor-arg name="serialization">
+            <!--<bean class="com.sky.light4j.serialization.impl.ProtostuffSerialization" />-->
+            <!--<bean class="com.sky.light4j.serialization.impl.JdkSerialization" />-->
+            <!--<bean class="com.sky.light4j.serialization.impl.FastJsonSerialization" />-->
+            <bean class="com.sky.light4j.serialization.impl.HessionSerialization" />
+        </constructor-arg>
     </bean>
 
     <!-- 配置 RPC 代理 -->
-    <bean id="rpcProxy" class="com.sky.rpc.client.RpcProxy">
+    <bean id="rpcProxy" class="com.sky.light4j.proxy.Light4jProxyFactory">
         <constructor-arg name="client" ref="rpcClient"/>
     </bean>
 

@@ -1,4 +1,4 @@
-package com.sky.rpc.serialization;
+package com.sky.light4j.serialization;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -13,8 +13,11 @@ public class RpcDecoder extends ByteToMessageDecoder {
 
     private Class<?> genericClass;
 
-    public RpcDecoder(Class<?> genericClass) {
+    private Serialization serialization;
+
+    public RpcDecoder(Class<?> genericClass,Serialization serialization) {
         this.genericClass = genericClass;
+        this.serialization=serialization;
     }
 
     @Override
@@ -34,7 +37,7 @@ public class RpcDecoder extends ByteToMessageDecoder {
         byte[] data = new byte[dataLength];
         in.readBytes(data);
 
-        Object obj = SerializationUtil.deserialize(data, genericClass);
+        Object obj = serialization.deserialize(data, genericClass);
         out.add(obj);
     }
 }

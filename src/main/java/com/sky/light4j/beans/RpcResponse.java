@@ -1,9 +1,11 @@
-package com.sky.rpc.beans;
+package com.sky.light4j.beans;
+
+import java.io.Serializable;
 
 /**
  * Created by shaojunjie on 2015/3/2.
  */
-public class RpcResponse {
+public class RpcResponse implements Serializable{
 
     private String requestId;
     private Throwable error;

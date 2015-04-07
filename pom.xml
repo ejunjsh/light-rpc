@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.sky.rpc</groupId>
-    <artifactId>light-rpc</artifactId>
+    <groupId>com.sky.light4j</groupId>
+    <artifactId>light4j</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 <dependencies>
@@ -82,6 +82,16 @@
         <groupId>cglib</groupId>
         <artifactId>cglib</artifactId>
         <version>3.1</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.1.31</version>
+    </dependency>
+    <dependency>
+        <groupId>com.caucho</groupId>
+        <artifactId>hessian</artifactId>
+        <version>4.0.33</version>
     </dependency>
 </dependencies>
 </project>

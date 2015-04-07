@@ -1,5 +1,6 @@
 package com.sky.test;
 
+import com.sky.light4j.server.RpcServer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -8,6 +9,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class RpcBootstrap {
 
     public static void main(String[] args) {
-        new ClassPathXmlApplicationContext("server.xml");
+        ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("server.xml");
+        RpcServer server=(RpcServer)context.getBean("rpcServer");
+        server.start();
     }
 }

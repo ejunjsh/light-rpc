@@ -1,6 +1,6 @@
-package com.sky.rpc.client;
+package com.sky.light4j.client;
 
-import com.sky.rpc.Constant;
+import com.sky.light4j.Constant;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
 import org.apache.zookeeper.Watcher;

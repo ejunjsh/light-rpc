@@ -1,7 +1,6 @@
 package com.sky.test;
 
-import com.sky.rpc.client.RpcProxy;
-import org.junit.Assert;
+import com.sky.light4j.proxy.Light4jProxyFactory;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -20,24 +19,29 @@ public class HelloServiceTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloServiceTest.class);
 
     @Autowired
-    private RpcProxy rpcProxy;
+    private Light4jProxyFactory rpcProxy;
 
     @Test
     public void helloTest() {
+        long start=System.currentTimeMillis();
         HelloService helloService = rpcProxy.create(HelloService.class);
-        for(int i=0;i<=1000;i++) {
-            String result = helloService.hello("World");
+        for(int i=0;i<=10000;i++) {
+            LOGGER.debug("test");
+            String result=helloService.hello("邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰邵俊杰");
             LOGGER.debug(result+"====="+i);
         }
+        long end=System.currentTimeMillis();
 
-        try {
-            Thread.sleep(61000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        LOGGER.debug("花费时间:"+(end-start)+"ms");
 
-        String result = helloService.hello("World");
-        LOGGER.debug(result);
+//        try {
+//            Thread.sleep(61000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//
+//        String result = helloService.hello("World");
+//        LOGGER.debug(result);
 //        Assert.assertEquals("Hello! World", result);
     }
 }
